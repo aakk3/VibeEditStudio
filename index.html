@@ -58,7 +58,7 @@
     <div class="card"><h3>Standard</h3><p>Full YouTube video (5–10 min), 2 revisions<br>$5 per video</p></div>
     <div class="card"><h3>Premium</h3><p>Full service + thumbnails + captions + social cutdowns<br>$10 per video</p></div>
     <div class="card"><h3>Starter Plan</h3><p>5 edited videos per month<br><strong>$59.99 / month</strong></p></div>
-    <div class="card"><h3>Creator Plan</h3><p>10 edited videos per month<br><strong>$99.99 / month</strong></p></div>
+    <div class="card"><h3>Creator Plan</h3><p>10 edited videos per month + Thumbnails<br><strong>$99.99 / month</strong></p></div>
   </div>
 </section>
 
@@ -135,9 +135,23 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
 
 </section>
 
-<footer>
+<<footer>
   <p>&copy; 2025 VibeEdit Studio. All rights reserved.</p>
-  <a href="https://instagram.com/yourpage" class="insta-btn" target="_blank">Visit Us on Instagram</a>
+
+  <!-- Social / Pay Buttons -->
+  <div style="margin-top:1rem; display:flex; justify-content:center; gap:12px;">
+    <!-- Instagram Button -->
+    <a href="https://instagram.com/yourpage" target="_blank" rel="noopener"
+       style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:#e1306c; border-radius:50%; color:white; font-size:24px; text-decoration:none; transition: transform 0.2s ease;">
+      <span style="font-family:Arial, sans-serif;">📸</span>
+    </a>
+
+    <!-- PayPal Button -->
+    <a href="https://www.paypal.com/paypalme/Vibeeditstudio123" target="_blank" rel="noopener"
+       style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:#009cde; border-radius:50%; color:white; font-size:24px; text-decoration:none; transition: transform 0.2s ease;">
+      <span style="font-family:Arial, sans-serif;">💰</span>
+    </a>
+  </div>
 </footer>
 
 <script>
