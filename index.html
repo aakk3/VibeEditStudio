@@ -79,42 +79,60 @@
 
 <section class="section" id="order">
   <h2>Order Your Edit</h2>
-  <form id="orderForm" action="https://formspree.io/f/meornlqr" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <p style="color:#d9534f; font-weight:bold; margin-bottom:0.4rem;">⚠️ Use a real email — we will send invoices and delivery links there.</p>
-    <input type="email" name="email" placeholder="Your Email" required />
-    
-    <label for="package">Select Your Package:</label>
-    <select name="package" required>
-      <option value="">--Choose a package--</option>
-      <option value="Basic">Basic - $2 per video</option>
-      <option value="Standard">Standard - $5 per video</option>
-      <option value="Premium">Premium - $10 per video</option>
-      <option value="Starter Plan">Starter Plan - 5 videos / $39.99</option>
-      <option value="Creator Plan">Creator Plan - 15 + 1 free videos / $99.99</option>
-    </select>
+  <!-- VibeEdit Studio Order Form -->
+<!-- VibeEdit Studio Order Form -->
+<form action="https://formspree.io/f/meornlqr" method="POST" id="orderForm" style="max-width:600px;margin:auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.1);font-family:'Segoe UI',sans-serif;">
+  
+  <h2 style="text-align:center;margin-bottom:15px;">Place Your Order 🎬</h2>
+  <p style="color:#e74c3c;font-weight:bold;text-align:center;margin-bottom:20px;">
+    ⚠️ Please enter a valid email address — we’ll contact you there!
+  </p>
+  
+  <label style="display:block;margin-bottom:8px;">Your Name:</label>
+  <input type="text" name="name" placeholder="Full Name" required style="width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;">
+  
+  <label style="display:block;margin-bottom:8px;">Your Email:</label>
+  <input type="email" name="email" placeholder="example@email.com" required style="width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;">
+  
+  <label style="display:block;margin-bottom:8px;">Select Package:</label>
+  <select name="package" required style="width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;">
+    <option value="">-- Choose a package --</option>
+    <option value="Basic">Basic - $2 per video</option>
+    <option value="Standard">Standard - $5 per video</option>
+    <option value="Premium">Premium - $10 per video</option>
+    <option value="Starter Plan">Starter Plan - 5 videos / $59.99</option>
+    <option value="Creator Plan">Creator Plan - 10 videos / $99.99</option>
+  </select>
+  
+  <label style="display:block;margin-bottom:8px;">Project Details:</label>
+  <textarea name="message" rows="5" placeholder="Write your video details or special requests..." required style="width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;"></textarea>
+  
+  <!-- Policies Agreement -->
+  <div style="margin-bottom:20px;">
+    <input type="checkbox" id="agree" required style="margin-right:8px;">
+    <label for="agree">I have read and agree to all <a href="#content-policy" style="color:#1a1a1a;text-decoration:underline;">VibeEdit Studio Policies</a> (including the 30% deposit and content rules).</label>
+  </div>
 
-    <textarea name="details" rows="5" placeholder="Provide video details / instructions..." required></textarea>
+  <!-- Hidden Fields -->
+  <input type="hidden" name="_subject" value="🎥 New Order from VibeEdit Studio">
+  <input type="hidden" name="_template" value="table">
+  
+  <button type="submit" style="background:#1a1a1a;color:#fff;padding:12px 20px;border:none;border-radius:6px;cursor:pointer;width:100%;font-size:1rem;">
+    Submit Order
+  </button>
+</form>
 
-    <!-- Agreement checkbox -->
-    <div class="notice-box">
-      <input type="checkbox" id="agreeCheckbox" required>
-      <label for="agreeCheckbox">
-        I have read and agree to the website policies, content rules, and 30% upfront payment requirement with a screenshot as a proof.
-      </label>
-    </div>
+<script>
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  const agree = document.getElementById('agree');
+  if (!agree.checked) {
+    e.preventDefault();
+    alert('⚠️ Please accept all policies before placing your order.');
+  }
+});
+</script>
 
-    <!-- Hidden proof fields -->
-    <input type="hidden" name="agreement_text" id="agreement_text" value="">
-    <input type="hidden" name="agreement_time" id="agreement_time" value="">
-    <input type="hidden" name="user_agent" id="user_agent" value="">
 
-    <!-- Formspree extras -->
-    <input type="hidden" name="_subject" value="New Order from VibeEdit Studio!">
-    <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
-
-    <button id="submitBtn" type="submit">Place Order</button>
-  </form>
 </section>
 
 <footer>
