@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeEdit Studio</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
+    body { line-height:1.6; background:#f2f2f2; color:#333; }
+    header { background:#1a1a1a; color:white; padding:2rem 1rem; text-align:center; }
+    header h1 { font-size:2.5rem; }
+    nav { margin-top:1rem; }
+    nav a { color:white; margin:0 1rem; text-decoration:none; font-weight:bold; }
+    .hero { position:relative; background:url('https://images.unsplash.com/photo-1581092339543-b3d1c6730046?fit=crop&w=1200&q=80') no-repeat center center/cover; color:white; text-align:center; padding:6rem 1rem; display:flex; align-items:center; justify-content:center; min-height:320px; overflow:hidden; }
+    .hero .overlay { position:absolute; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.6); z-index:1; }
+    .hero-content { position:relative; z-index:2; max-width:700px; }
+    .hero h2 { font-size:2.5rem; margin-bottom:1rem; text-shadow:0 2px 6px rgba(0,0,0,0.8); }
+    .hero p { font-size:1.2rem; text-shadow:0 1px 4px rgba(0,0,0,0.7); }
+    .section { padding:3rem 1rem; max-width:900px; margin:auto; }
+    .pricing { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
+    .card { background:white; padding:1.5rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    .card h3 { margin-bottom:0.5rem; }
+    .card p { font-size:0.95rem; }
+    form { background:white; padding:2rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); max-width:600px; margin:auto; }
+    form input, form textarea, form select { width:100%; padding:0.75rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:5px; resize:vertical; }
+    form button { background:#1a1a1a; color:white; padding:0.75rem 1.5rem; border:none; border-radius:5px; cursor:pointer; transition:background 0.3s ease; }
+    form button:hover { background:#333; }
+    footer { text-align:center; padding:2rem 1rem; background:#1a1a1a; color:white; margin-top:2rem; }
+    .insta-btn { display:inline-block; background:#e1306c; color:white; padding:0.75rem 1.5rem; border-radius:30px; text-decoration:none; font-weight:bold; margin-top:1rem; transition:background 0.3s ease, transform 0.2s ease; }
+    .insta-btn:hover { background:#c13584; transform:scale(1.05); }
+    @media (max-width:600px) { header h1, .hero h2 { font-size:1.8rem; } .hero p { font-size:1rem; } }
+    .notice-box { background:#fff3cd; border:1px solid #ffeeba; padding:0.7rem; border-radius:5px; margin-bottom:1rem; color:#856404; font-weight:bold; }
+    .policy-box { background:#d1ecf1; border:1px solid #bee5eb; padding:0.7rem; border-radius:5px; margin-bottom:1rem; color:#0c5460; font-weight:bold; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>VibeEdit Studio</h1>
+  <nav>
+    <a href="#pricing">Pricing</a>
+    <a href="#order">Order</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2>Professional Video Editing for Creators & Brands</h2>
+    <p>Fast, stylish, and affordable editing tailored to your content. You shoot, we cut.</p>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <h2>Pricing</h2>
+  <div class="pricing">
+    <div class="card"><h3>Basic</h3><p>1 short-form video (up to 1 min)<br>$2 per video</p></div>
+    <div class="card"><h3>Standard</h3><p>Full YouTube video (5–10 min), 2 revisions<br>$5 per video</p></div>
+    <div class="card"><h3>Premium</h3><p>Full service + thumbnails + captions + social cutdowns<br>$10 per video</p></div>
+    <div class="card"><h3>Starter Plan</h3><p>5 edited videos per month<br><strong>$59.99 / month</strong></p></div>
+    <div class="card"><h3>Creator Plan</h3><p>10 edited videos per month<br><strong>$99.99 / month</strong></p></div>
+  </div>
+</section>
+
+<section class="section" id="content-policy">
+  <h2>Content & Payment Policy</h2>
+  <div class="policy-box">
+    ⚠️ All orders require a <strong>30% upfront payment</strong> before editing begins.
+  </div>
+  <p>We <strong>do not</strong> edit or include content that contains:</p>
+  <ul>
+    <li>Explicit sexual material or adult content</li>
+    <li>Haram or prohibited religious content</li>
+    <li>Copyrighted music without permission</li>
+    <li>Any offensive, illegal, or unethical material</li>
+  </ul>
+  <p>By submitting your videos, you agree that the content complies with these guidelines and that the upfront payment has been made.</p>
+</section>
+
+<section class="section" id="order">
+  <h2>Order Your Edit</h2>
+  <form id="orderForm" action="https://formspree.io/f/meornlqr" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <p style="color:#d9534f; font-weight:bold; margin-bottom:0.4rem;">⚠️ Use a real email — we will send invoices and delivery links there.</p>
+    <input type="email" name="email" placeholder="Your Email" required />
+    
+    <label for="package">Select Your Package:</label>
+    <select name="package" required>
+      <option value="">--Choose a package--</option>
+      <option value="Basic">Basic - $2 per video</option>
+      <option value="Standard">Standard - $5 per video</option>
+      <option value="Premium">Premium - $10 per video</option>
+      <option value="Starter Plan">Starter Plan - 5 videos / $39.99</option>
+      <option value="Creator Plan">Creator Plan - 15 + 1 free videos / $99.99</option>
+    </select>
+
+    <textarea name="details" rows="5" placeholder="Provide video details / instructions..." required></textarea>
+
+    <!-- Agreement checkbox -->
+    <div class="notice-box">
+      <input type="checkbox" id="agreeCheckbox" required>
+      <label for="agreeCheckbox">
+        I have read and agree to the website policies, content rules, and 30% upfront payment requirement with a screenshot as a proof.
+      </label>
+    </div>
+
+    <!-- Hidden proof fields -->
+    <input type="hidden" name="agreement_text" id="agreement_text" value="">
+    <input type="hidden" name="agreement_time" id="agreement_time" value="">
+    <input type="hidden" name="user_agent" id="user_agent" value="">
+
+    <!-- Formspree extras -->
+    <input type="hidden" name="_subject" value="New Order from VibeEdit Studio!">
+    <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
+
+    <button id="submitBtn" type="submit">Place Order</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 VibeEdit Studio. All rights reserved.</p>
+  <a href="https://instagram.com/yourpage" class="insta-btn" target="_blank">Visit Us on Instagram</a>
+</footer>
+
+<script>
+  document.getElementById('user_agent').value = navigator.userAgent || '';
+  const checkbox = document.getElementById('agreeCheckbox');
+  const agreementTextInput = document.getElementById('agreement_text');
+  const agreementTimeInput = document.getElementById('agreement_time');
+
+  const AGREEMENT_TEXT = "Customer agrees to VibeEdit Studio policies: content policy, 30% upfront payment, payment terms, refund policy.";
+  agreementTextInput.value = AGREEMENT_TEXT;
+
+  document.getElementById('orderForm').addEventListener('submit', function(e){
+    if(!checkbox.checked){
+      e.preventDefault();
+      alert("⚠️ You must read and agree to all policies (including 30% upfront payment) before placing an order.");
+      checkbox.scrollIntoView({behavior:"smooth", block:"center"});
+      checkbox.focus();
+      return false;
+    }
+    if(!agreementTimeInput.value){
+      agreementTimeInput.value = new Date().toISOString();
+    }
+  });
+</script>
+
+</body>
+</html>
