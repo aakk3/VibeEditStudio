@@ -31,6 +31,8 @@
     @media (max-width:600px) { header h1, .hero h2 { font-size:1.8rem; } .hero p { font-size:1rem; } }
     .notice-box { background:#fff3cd; border:1px solid #ffeeba; padding:0.7rem; border-radius:5px; margin-bottom:1rem; color:#856404; font-weight:bold; }
     .policy-box { background:#d1ecf1; border:1px solid #bee5eb; padding:0.7rem; border-radius:5px; margin-bottom:1rem; color:#0c5460; font-weight:bold; }
+    .upload-btn { display:inline-block; background:#1a1a1a; color:white; padding:15px 25px; border-radius:8px; font-weight:bold; text-decoration:none; font-size:1.1rem; transition:0.3s; }
+    .upload-btn:hover { background:#333; }
   </style>
 </head>
 <body>
@@ -78,49 +80,68 @@
 </section>
 
 <section class="section" id="order">
-  <h2>Order Your Edit (you can send your video using gmail by creating a link in google drive)</h2>
-  <!-- VibeEdit Studio Order Form -->
-<!-- VibeEdit Studio Order Form -->
-<form action="https://formspree.io/f/meornlqr" method="POST" id="orderForm" style="max-width:600px;margin:auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.1);font-family:'Segoe UI',sans-serif;">
-  
-  <h2 style="text-align:center;margin-bottom:15px;">Place Your Order 🎬</h2>
-  <p style="color:#e74c3c;font-weight:bold;text-align:center;margin-bottom:20px;">
-    ⚠️ Please enter a valid email address — we’ll contact you there!
-  </p>
-  
-  <label style="display:block;margin-bottom:8px;">Your Name:</label>
-  <input type="text" name="name" placeholder="Full Name" required style="width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;">
-  
-  <label style="display:block;margin-bottom:8px;">Your Email:</label>
-  <input type="email" name="email" placeholder="example@email.com" required style="width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;">
-  
-  <label style="display:block;margin-bottom:8px;">Select Package:</label>
-  <select name="package" required style="width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;">
-    <option value="">-- Choose a package --</option>
-    <option value="Basic">Basic - $2 per video</option>
-    <option value="Standard">Standard - $5 per video</option>
-    <option value="Premium">Premium - $10 per video</option>
-    <option value="Starter Plan">Starter Plan - 5 videos / $59.99</option>
-    <option value="Creator Plan">Creator Plan - 10 videos / $99.99</option>
-  </select>
-  
-  <label style="display:block;margin-bottom:8px;">Project Details:</label>
-  <textarea name="message" rows="5" placeholder="Write your video details or special requests..." required style="width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;"></textarea>
-  
-  <!-- Policies Agreement -->
-  <div style="margin-bottom:20px;">
-    <input type="checkbox" id="agree" required style="margin-right:8px;">
-    <label for="agree">I have read and agree to all <a href="#content-policy" style="color:#1a1a1a;text-decoration:underline;">VibeEdit Studio Policies</a> (including the 30% deposit and content rules).</label>
+  <h2>Order Your Edit</h2>
+
+  <!-- Google Drive Upload Button -->
+  <div style="text-align:center; margin-bottom:30px;">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrS7P4SUlW3zHEIkUhS3KNgLhyALxK_PQplq_ygPSRugKQvg/viewform?pli=1
+" target="_blank" class="upload-btn">
+  Upload Your Video 🎬
+</a>
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrS7P4SUlW3zHEIkUhS3KNgLhyALxK_PQplq_ygPSRugKQvg/viewform?pli=1
+" target="_blank" class="upload-btn">
+  Upload Your Video 🎬
+</a>
+
+    <p style="margin-top:10px; font-size:0.9rem; color:#666;">Opens in a new tab — all uploaded videos go directly to our Google Drive.</p>
   </div>
 
-  <!-- Hidden Fields -->
-  <input type="hidden" name="_subject" value="🎥 New Order from VibeEdit Studio">
-  <input type="hidden" name="_template" value="table">
-  
-  <button type="submit" style="background:#1a1a1a;color:#fff;padding:12px 20px;border:none;border-radius:6px;cursor:pointer;width:100%;font-size:1rem;">
-    Submit Order
-  </button>
-</form>
+  <!-- Existing Formspree Order Form -->
+  <form action="https://formspree.io/f/meornlqr" method="POST" id="orderForm">
+    <h2 style="text-align:center;margin-bottom:15px;">Place Your Order 🎬</h2>
+    <p style="color:#e74c3c;font-weight:bold;text-align:center;margin-bottom:20px;">
+      ⚠️ Please enter a valid email address — we’ll contact you there!
+    </p>
+    
+    <label>Your Name:</label>
+    <input type="text" name="name" placeholder="Full Name" required>
+    
+    <label>Your Email:</label>
+    <input type="email" name="email" placeholder="example@email.com" required>
+    
+    <label>Select Package:</label>
+    <select name="package" required>
+      <option value="">-- Choose a package --</option>
+      <option value="Basic">Basic - $2 per video</option>
+      <option value="Standard">Standard - $5 per video</option>
+      <option value="Premium">Premium - $10 per video</option>
+      <option value="Starter Plan">Starter Plan - 5 videos / $59.99</option>
+      <option value="Creator Plan">Creator Plan - 10 videos / $99.99</option>
+    </select>
+    
+    <label>Project Details:</label>
+    <textarea name="message" rows="5" placeholder="Write your video details or special requests..." required></textarea>
+    
+    <div style="margin-bottom:20px;">
+      <input type="checkbox" id="agree" required>
+      <label for="agree">I have read and agree to all <a href="#content-policy" style="color:#1a1a1a;text-decoration:underline;">VibeEdit Studio Policies</a> (including the 30% deposit and content rules).</label>
+    </div>
+
+    <input type="hidden" name="_subject" value="🎥 New Order from VibeEdit Studio">
+    <input type="hidden" name="_template" value="table">
+    
+    <button type="submit">Submit Order</button>
+  </form>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 VibeEdit Studio. All rights reserved.</p>
+  <div style="margin-top:1rem; display:flex; justify-content:center; gap:12px;">
+    <a href="https://www.instagram.com/vibeeditstudio123/" target="_blank" style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:#e1306c; border-radius:50%; color:white; font-size:24px; text-decoration:none;"><span>📸</span></a>
+    <a href="https://www.paypal.com/paypalme/Vibeeditstudio123" target="_blank" style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:#009cde; border-radius:50%; color:white; font-size:24px; text-decoration:none;"><span>💰</span></a>
+  </div>
+</footer>
 
 <script>
 document.getElementById('orderForm').addEventListener('submit', function(e) {
@@ -130,51 +151,6 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
     alert('⚠️ Please accept all policies before placing your order.');
   }
 });
-</script>
-
-
-</section>
-
-<<footer>
-  <p>&copy; 2025 VibeEdit Studio. All rights reserved.</p>
-
-  <!-- Social / Pay Buttons -->
-  <div style="margin-top:1rem; display:flex; justify-content:center; gap:12px;">
-    <!-- Instagram Button -->
-    <a href="https://www.instagram.com/vibeeditstudio123/" target="_blank" rel="noopener"
-       style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:#e1306c; border-radius:50%; color:white; font-size:24px; text-decoration:none; transition: transform 0.2s ease;">
-      <span style="font-family:Arial, sans-serif;">📸</span>
-    </a>
-
-    <!-- PayPal Button -->
-    <a href="https://www.paypal.com/paypalme/Vibeeditstudio123" target="_blank" rel="noopener"
-       style="display:flex; align-items:center; justify-content:center; width:50px; height:50px; background:#009cde; border-radius:50%; color:white; font-size:24px; text-decoration:none; transition: transform 0.2s ease;">
-      <span style="font-family:Arial, sans-serif;">💰</span>
-    </a>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('user_agent').value = navigator.userAgent || '';
-  const checkbox = document.getElementById('agreeCheckbox');
-  const agreementTextInput = document.getElementById('agreement_text');
-  const agreementTimeInput = document.getElementById('agreement_time');
-
-  const AGREEMENT_TEXT = "Customer agrees to VibeEdit Studio policies: content policy, 30% upfront payment, payment terms, refund policy.";
-  agreementTextInput.value = AGREEMENT_TEXT;
-
-  document.getElementById('orderForm').addEventListener('submit', function(e){
-    if(!checkbox.checked){
-      e.preventDefault();
-      alert("⚠️ You must read and agree to all policies (including 30% upfront payment) before placing an order.");
-      checkbox.scrollIntoView({behavior:"smooth", block:"center"});
-      checkbox.focus();
-      return false;
-    }
-    if(!agreementTimeInput.value){
-      agreementTimeInput.value = new Date().toISOString();
-    }
-  });
 </script>
 
 </body>
